@@ -39,8 +39,6 @@ $pageTitle = "Dashboard";
 </div>
 </div>
 
-<<<<<<< HEAD
-=======
 <div class=" col-12 ">
     <div class="cardish ">
       <h1 class="fw-bold">Dashboard</h1>
@@ -77,6 +75,5 @@ $pageTitle = "Dashboard";
       </ul>
 </div>
 </div>
->>>>>>> 9a058cd9da00ccba920a6f57b37d5a7c959d057c
 
 <?php require_once __DIR__ . '/includes/footer.php'; ?>

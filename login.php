@@ -68,34 +68,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>LGU2 — Login</title>
     <link href="assets/img/Quezon_City.svg.png" rel="icon">
-<<<<<<< HEAD
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/login.css">
-</head>
-
-<body>
-    
-    <div class="stage text-center">
-        <img class="logo " src="assets/img/Quezon_City.svg.png" alt="" >
-        <div class="card" role="main" aria-label="LGU2 login">
-            <!-- Left branding -->
-            <div class="brand" aria-hidden="false">
-                <div class="logo-wrap">
-                    <div style="display:flex; align-items:center; gap:18px;">
-                        <div>
-                            <div class="logo">
-                                <div class="unit">LGU</div>
-                                <div class="lgutext">2</div>
-                            </div>
-                            <div class="logo-small">LOCAL GOVERNMENT UNIT</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right login form -->
-            <div class="form-area">
-=======
     <link href="assets/css/login.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/login.css">
@@ -111,7 +83,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             
         
             <div class="right col-md-6 d-flex align-items-center justify-content-center">
->>>>>>> 9a058cd9da00ccba920a6f57b37d5a7c959d057c
                 <div class="form-box" role="form" aria-labelledby="login-title">
                     <h3 id="login-title">Login</h3>
                     <p class="sub">Sign in to your account</p>
@@ -122,20 +93,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <form method="post" action="">
                         <div class="form-field">
-<<<<<<< HEAD
-                            <label class="small" for="email">Email</label>
-=======
                             
->>>>>>> 9a058cd9da00ccba920a6f57b37d5a7c959d057c
                             <input id="email" name="email" type="text" placeholder="Enter your email or username" autocomplete="username" value="<?=isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''?>">
                         </div>
 
                         <div class="form-field">
-<<<<<<< HEAD
-                            <label class="small" for="password">Password</label>
-=======
                             
->>>>>>> 9a058cd9da00ccba920a6f57b37d5a7c959d057c
                             <input id="password" name="password" type="password" placeholder="Enter your password" autocomplete="current-password">
                         </div>
 
@@ -147,16 +110,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </form>
                 </div>
             </div>
-<<<<<<< HEAD
-        </div>
-    </div>
-    
-</body>
-
-=======
      </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
->>>>>>> 9a058cd9da00ccba920a6f57b37d5a7c959d057c
 </html>
