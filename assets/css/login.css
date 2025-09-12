@@ -6,6 +6,7 @@
 
  html,
  body {
+<<<<<<< HEAD
      margin: 0;
      font-family: "Montserrat", system-ui, -apple-system, Arial, sans-serif;
      margin: 0;
@@ -334,3 +335,73 @@ input[type="password"] {
          font-size: 36px
      }
  }
+=======
+    margin: 0;
+    font-family: "Montserrat", system-ui, -apple-system, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+ }
+ /* Centering stage */
+
+.main-container{
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main-container  .logo{
+    position: relative;
+    width: 10%;
+    height: 10%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+    filter: blur(0px);
+    border: none;
+    display: flex;
+    align-self: flex-start;
+}
+.main-container .text-pic{
+    
+}
+.right{
+    position: relative;
+    background-color: #1a4d64;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    flex-direction: column;
+    height: 100%;
+}
+.left{
+    position: relative;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    padding: 2rem;
+    color: #1a4d64;
+    z-index: 2;
+}
+form input{
+    border: none;
+    border-bottom: 1px solid #0b7fad;
+    margin-top: 1rem;
+    border-radius: 0;
+    box-shadow: none;
+    padding-left: 0;
+    padding-right: 0;
+    transition: all 0.3s ease-in-out;
+}
+form input:nth-child(0){
+    margin-bottom: 5px;
+}
+form input:focus{
+    box-shadow: none;
+    border-bottom: 1px solid #1a4d64;
+}
+>>>>>>> 9a058cd9da00ccba920a6f57b37d5a7c959d057c

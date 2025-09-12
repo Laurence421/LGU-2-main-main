@@ -22,6 +22,7 @@
 
 <body class="g-0">
   <!-- Header -->
+<<<<<<< HEAD
   <header class="header bg-danger text-white d-flex g-0 align-items-center positon-relative col-sm-12 col-md-12 col-xl-12">
     
 
@@ -34,21 +35,49 @@
   
 
     <div class="profile dropdown">
+=======
+   <div>
+   <div class="blue col-12 fs-1 d-lg-flex d-md-flex d-none d-sm-block d-sm-none d-md-block d-md-none d-lg-block justify-content-center">
+      <img class="logo col-12 " src="assets/img/Quezon_City.svg.png" alt="" >
+    </div>
+    
+  <header class="header bg-light d-flex g-0 align-items-center  col-md-12 col-lg-12 col-xl-12">
+    <div class="burger-bg bg-danger position-relative" >
+      <button class=" btn burger  fs-1 mb-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="uil uil-bars"></i></button>
+    </div>      
+   <img class="qc-text" src="assets/img/QC.png" alt="">
+    <div class="title d-flex align-items-center justify-content-between">
+        <p class="  text-dark title mt-3 fs-md-5">LOCAL GOVERNMENT UNIT 2</p>
+        <div class="profile dropdown">
+>>>>>>> 9a058cd9da00ccba920a6f57b37d5a7c959d057c
       <button class="btn btn-light d-flex align-items-center gap-2" data-bs-toggle="dropdown" aria-expanded="false">
         <div class="avatar-32">
           <img src="<?= $root ?>assets/img/default-avatar.jpg" alt="User">
         </div>
         <i class="fa-solid fa-caret-down"></i>
       </button>
+<<<<<<< HEAD
       <ul class="dropdown-menu dropdown-menu-end">
         <li class="p-1"><a  class=" dropdown-item profile-link nav-link" href="<?= $root ?>profile.php"><i class="fa-regular fa-user me-2"></i>Profile</a></li>
         <li class="p-1"><a class="dropdown-item settings-link nav-link" href="<?= $root ?>settings.php"><i class="fa-solid fa-gear me-2"></i>Settings</a></li>
+=======
+      <ul class=" dropdown-menu dropdown-menu-end">
+        <li class="p-1 fw-normal"><a  class=" dropdown-item profile-link nav-link" href="<?= $root ?>profile.php"><i class="fa-regular fa-user me-2"></i>Profile</a></li>
+        <li class="p-1 fw-normal"><a class="dropdown-item settings-link nav-link" href="<?= $root ?>settings.php"><i class="fa-solid fa-gear me-2"></i>Settings</a></li>
+>>>>>>> 9a058cd9da00ccba920a6f57b37d5a7c959d057c
         <li><hr class="dropdown-divider"></li>
         <li  class="text-right"><a class="dropdown-item " href="#" data-bs-toggle="modal" data-bs-target="#logoutConfirmModal"><i class="fa-solid fa-right-from-bracket me-2"></i>Logout</a></li>
       </ul>
     </div>
+<<<<<<< HEAD
   </header>
 
+=======
+      </div>
+    
+  </header>
+</div>
+>>>>>>> 9a058cd9da00ccba920a6f57b37d5a7c959d057c
   <!-- Mobile backdrop -->
   <div id="backdrop" class="backdrop " aria-hidden="true"></div>
 
@@ -58,11 +87,20 @@
     
 
 <aside class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+<<<<<<< HEAD
     <div class="offcanvas-header col-12 d-flex align-items-center p-2">
         <img class="logo " src="assets/img/Quezon_City.svg.png" alt="" >
         <button class="close " data-bs-dismiss="offcanvas"><i class="uil uil-left-indent-alt"></i></button>
       </div>
     <div class="sidebar-top">
+=======
+  
+    <div class="offcanvas-header col-12 d-flex align-items-center p-1">
+        <img class="side-logo col-12 d-lg-none" src="assets/img/Quezon_City.svg.png" alt="" >
+        <button class="close " data-bs-dismiss="offcanvas"><i class="uil uil-list-ui-alt"></i></button>
+      </div>
+    <div class="sidebar-top pd">
+>>>>>>> 9a058cd9da00ccba920a6f57b37d5a7c959d057c
           <div class="profile-pod">
             <div class="text-center w-100">
               <div class="avatar-64 mx-auto mb-3">
@@ -70,10 +108,17 @@
               </div>
               <div class="user-name "><h5 class="fw-bold"><?= ucfirst($_SESSION['username'] ?? 'Guest') ?></h5></div>
             </div>
+<<<<<<< HEAD
           </div>
         </div><hr class="aside-hr m-0 p-0">
 
         <nav class="side-nav " id="sideNav">
+=======
+          </div><hr class="aside-hr me-4 ms-4 p-0">
+        </div>
+
+        <nav class="side-nav" id="sideNav">
+>>>>>>> 9a058cd9da00ccba920a6f57b37d5a7c959d057c
           <!-- Dashboard - Single link, no collapse -->
           <div class="nav-group ">
             <a href="<?= $root ?>dashboard.php" class="group-toggle no-caret" style="text-decoration: none;">
@@ -206,11 +251,18 @@
               <i class="fa-solid fa-chevron-down caret"></i>
             </button>
             <ul class="sublist">
+<<<<<<< HEAD
             <li><a href="<?= $root ?>contents/legislative-research-section/research_dashboard.php"class="nav-link">Research Dashboard</a></li>
             <li><a href="<?= $root ?>contents/legislative-research-section/draftmeasurestask.php"class="nav-link">Draft Measures Task</a></li>
             <li><a href="<?= $root ?>contents/legislative-research-section/similarmeasuretool.php" class="nav-link">Similarity Checking Tool (Pending Measures)</a></li>
             <li><a href="<?= $root ?>contents/legislative-research-section/citationcheckingtool.php" class="nav-link">Citation Checking Tool</a></li>
             <li><a href="<?= $root ?>contents/legislative-research-section/measurecomparisontool.php" class="nav-link">Measure Comparison Tool</a></li>    
+=======
+              <li><a href="<?= $root ?>" class="nav-link">Legislative
+                  Trends Dashboard</a></li>
+              <li><a href="<?= $root ?>contents/legislative-research-section/KeywordandTopicSearch.php"class="nav-link">Keyword
+                  & Topic Search</a></li>
+>>>>>>> 9a058cd9da00ccba920a6f57b37d5a7c959d057c
             </ul>
           </div>
 
