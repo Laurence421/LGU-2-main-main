@@ -210,10 +210,7 @@
               <i class="fa-solid fa-chevron-down caret"></i>
             </button>
             <ul class="sublist">
-              <li><a href="<?= $root ?>" class="nav-link">Legislative
-                  Trends Dashboard</a></li>
-              <li><a href="<?= $root ?>contents/legislative-research-section/KeywordandTopicSearch.php"class="nav-link">Keyword
-                  & Topic Search</a></li>
+            <li><a href="<?= $root ?>contents/legislative-research-section/draftmeasurestask.php"class="nav-link">Draft Measures Task</a></li>
             </ul>
           </div>
 
