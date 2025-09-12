@@ -34,24 +34,20 @@
     align-self: flex-start;
 }
 .main-container .text-pic{
-    
+    margin-bottom: 5px;
 }
 .right{
     position: relative;
     background-color: #1a4d64;
     color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
     padding: 2rem;
     flex-direction: column;
     height: 100%;
+    box-shadow: 0px 10px 6px 0px rgba(0, 0, 0, 0.15);
 }
 .left{
     position: relative;
-    height: 100%;
-    background-color: #ffffff;
+    height:100%;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     padding: 2rem;
     color: #1a4d64;
@@ -59,18 +55,43 @@
 }
 form input{
     border: none;
-    border-bottom: 1px solid #0b7fad;
+    width: 35vh;
+    border-bottom: #f0f0f0 1px solid;
     margin-top: 1rem;
+    color: #ffffff;
     border-radius: 0;
     box-shadow: none;
-    padding-left: 0;
-    padding-right: 0;
     transition: all 0.3s ease-in-out;
+    background-color: #1a4d64;
 }
-form input:nth-child(0){
-    margin-bottom: 5px;
+#password{
+    margin-bottom: 1rem;
 }
 form input:focus{
-    box-shadow: none;
-    border-bottom: 1px solid #1a4d64;
+    border-bottom: #f0f0f0 1px solid;
+}
+form input::placeholder{
+    color: #f0f0f0af;
+    transition: all 0.3s ease-in-out;
+}
+.controls{
+    margin-bottom: 1rem;
+}
+.btn-login{
+    width: 15rem;
+    background-color: #026fa1;
+    color: #ffffff;
+    border: none;
+    height: 2.2rem;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0px 10px 6px 0px rgba(0, 0, 0, 0.15);
+}
+.btn-login:hover{
+    background-color: #03618d;
+    color: #f0f0f0;
+}
+form a{
+    text-decoration: none;
+    color: #f0f0f0;
 }

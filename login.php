@@ -75,42 +75,43 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
 <body class="g-0">
-    <div class="main-container container-fluid g-0 ">
-        <div class="left col-md-6 d-flex align-items-center justify-content-center">
+    <div class="main-container container-fluid g-0">
+        <div class="left col-lg-7 col-md-12 row-md-2 d-flex align-items-center justify-content-center">
             <img class="text-pic" src="assets/img/QC.png" alt="">
-            <h4 class="fw-bolder ms-2">LOCAL GOVERNMENT UNIT 2</h4>
+            <h4 class="fw-bolder ms-1">LOCAL GOVERNMENT UNIT 2</h4>
         </div>    
             
         
-            <div class="right col-md-6 d-flex align-items-center justify-content-center">
-                <div class="form-box" role="form" aria-labelledby="login-title">
-                    <h3 id="login-title">Login</h3>
-                    <p class="sub">Sign in to your account</p>
+        <div class="right col-lg-5 col-md-12 row-md- d-flex align-items-center justify-content-center">
+            
+            <div class="form-box" role="form" aria-labelledby="login-title">
+                <h3 id="login-title fw-bolder">Login</h3>
+                <p class="sub">Sign in to your account</p>
 
-                    <?php if ($error): ?>
-                        <div class="error" style="color:#c0392b; margin-bottom:12px;"><?=htmlspecialchars($error)?></div>
-                    <?php endif; ?>
+                <?php if ($error): ?>
+                    <div class="error" style="color:#c0392b; margin-bottom:12px;"><?=htmlspecialchars($error)?></div>
+                <?php endif; ?>
 
-                    <form method="post" action="">
-                        <div class="form-field">
-                            
-                            <input id="email" name="email" type="text" placeholder="Enter your email or username" autocomplete="username" value="<?=isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''?>">
-                        </div>
+                <form method="post" action="" class="d-flex align-items-center justify-content-center flex-column">
+                    <div class="form-field">
+                        
+                        <input id="email" name="email" type="text" placeholder="Enter your email or username" autocomplete="username" value="<?=isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''?>">
+                    </div>
 
-                        <div class="form-field">
-                            
-                            <input id="password" name="password" type="password" placeholder="Enter your password" autocomplete="current-password">
-                        </div>
+                    <div class="form-field">
+                        
+                        <input id="password" name="password" type="password" placeholder="Enter your password" autocomplete="current-password">
+                    </div>
 
-                        <div class="controls">
-                            <a class="forgot" href="#">Forgot Password?</a>
-                        </div>
+                    <div class="controls">
+                        <a class="forgot" href="#">Forgot Password?</a>
+                    </div>
 
-                        <button class="btn-login" id="btnLogin" type="submit">LOGIN</button>
-                    </form>
-                </div>
+                    <button class="btn-login" id="btnLogin" type="submit">LOGIN</button>
+                </form>
             </div>
-     </div>
+        </div>
+    </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
