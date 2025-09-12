@@ -108,17 +108,10 @@
               </div>
               <div class="user-name "><h5 class="fw-bold"><?= ucfirst($_SESSION['username'] ?? 'Guest') ?></h5></div>
             </div>
-<<<<<<< HEAD
-          </div>
-        </div><hr class="aside-hr m-0 p-0">
-
-        <nav class="side-nav " id="sideNav">
-=======
           </div><hr class="aside-hr me-4 ms-4 p-0">
         </div>
 
         <nav class="side-nav" id="sideNav">
->>>>>>> 9a058cd9da00ccba920a6f57b37d5a7c959d057c
           <!-- Dashboard - Single link, no collapse -->
           <div class="nav-group ">
             <a href="<?= $root ?>dashboard.php" class="group-toggle no-caret" style="text-decoration: none;">
