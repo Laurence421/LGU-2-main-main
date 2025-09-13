@@ -24,14 +24,14 @@
   <!-- Header -->
    <div>
    <div class="blue col-12 fs-1 d-lg-flex d-md-flex d-none d-sm-block d-sm-none d-md-block d-md-none d-lg-block justify-content-center">
-      <img class="logo col-12 " src="assets/img/Quezon_City.svg.png" alt="" >
+      <img class="logo col-12 " src="../../assets/img/Quezon_City.svg.png" alt="" >
     </div>
     
   <header class="header bg-light d-flex g-0 align-items-center  col-md-12 col-lg-12 col-xl-12">
     <div class="burger-bg bg-danger position-relative" >
       <button class=" btn burger  fs-1 mb-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="uil uil-bars"></i></button>
     </div>      
-   <img class="qc-text" src="assets/img/QC.png" alt="">
+   <img class="qc-text" src="../../assets/img/QC.png" alt="">
     <div class="title d-flex align-items-center justify-content-between">
         <p class="  text-dark title mt-3 fs-md-5">LOCAL GOVERNMENT UNIT 2</p>
         <div class="profile dropdown">
@@ -63,7 +63,7 @@
 <aside class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
   
     <div class="offcanvas-header col-12 d-flex align-items-center p-1">
-        <img class="side-logo col-12 d-lg-none" src="assets/img/Quezon_City.svg.png" alt="" >
+        <img class="side-logo col-12 d-lg-none" src="../../assets/img/Quezon_City.svg.png" alt="" >
         <button class="close " data-bs-dismiss="offcanvas"><i class="uil uil-list-ui-alt"></i></button>
       </div>
     <div class="sidebar-top pd">
