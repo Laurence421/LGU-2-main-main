@@ -6,7 +6,7 @@
     <div class="modal-dialog modal-md modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header border-0 d-flex flex-column">
-          <img class="d-flex justify-content-center" src="assets/img/out.gif" alt="">
+          <img class="d-flex justify-content-center" src="../../assets/img/out.gif" alt="">
         
         </div>
 
