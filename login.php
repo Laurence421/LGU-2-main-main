@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     if ($verified) {
                         $_SESSION['user_id'] = $row['id'];
                         $_SESSION['username'] = $row['username'];
-                        header('Location: dashboard.php');
+                        header('Location: ../LGU-2-main-main/contents/dashboard/dashboard.php');
                         exit;
                     } else {
                         $error = 'Invalid credentials.';
@@ -76,13 +76,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <body class="g-0">
     <div class="main-container container-fluid g-0">
-        <div class="left col-lg-7 col-md-12 row-md-2 d-flex align-items-center justify-content-center">
+        <div class="left col-lg-6 col-md-12 row-md-2 d-flex align-items-center justify-content-center">
             <img class="text-pic" src="assets/img/QC.png" alt="">
             <h4 class="fw-bolder ms-1">LOCAL GOVERNMENT UNIT 2</h4>
         </div>    
             
         
-        <div class="right col-lg-5 col-md-12 row-md- d-flex align-items-center justify-content-center">
+        <div class="right col-lg-6 col-md-12 row-md- d-flex align-items-center justify-content-center">
             
             <div class="form-box" role="form" aria-labelledby="login-title">
                 <h3 id="login-title fw-bolder">Login</h3>

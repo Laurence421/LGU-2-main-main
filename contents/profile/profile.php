@@ -1,6 +1,6 @@
-<?php require_once __DIR__ . '/auth.php';
+<?php require_once __DIR__ . '../../../auth.php';
 $pageTitle = "Profile Settings";
-      require_once __DIR__ . '/includes/header.php';
+      require_once __DIR__ . '../../../includes/header.php';
 
 
 // Database connection
@@ -44,7 +44,7 @@ if ($mysqli->connect_errno) {
             } elseif ($file['size'] > $max_size) {
                 $error = 'File is too large. Maximum size is 2MB.';
             } else {
-                $upload_dir = 'assets/img/avatars/';
+                $upload_dir = '../../assets/avatars/';
                 if (!file_exists($upload_dir)) {
                     mkdir($upload_dir, 0777, true);
                 }
@@ -147,7 +147,7 @@ if ($mysqli->connect_errno) {
                                 <label class="form-label">Profile Picture</label>
                                 <div class="d-flex align-items-center gap-3 mb-3">
                                     <div class="avatar-preview" style="width:100px;height:100px;border-radius:50%;overflow:hidden;border:2px solid #ddd">
-                                        <img src="<?= htmlspecialchars($user['avatar_url'] ?? 'assets/img/image.webp') ?>" 
+                                        <img src="<?= htmlspecialchars($user['avatar_url'] ?? '../../assets/avatars/') ?>" 
                                              alt="Profile picture" style="width:100%;height:100%;object-fit:cover" id="avatarPreview">
                                     </div>
                                     <div class="flex-grow-1">
@@ -191,7 +191,7 @@ if ($mysqli->connect_errno) {
 
                             <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
                                 <a href="index.php" class="btn btn-light me-md-2">Cancel</a>
-                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                                <button type="submit"  class="btn btn-primary">Save Changes</button>
                             </div>
                         </form>
                     </div>
@@ -209,4 +209,4 @@ if ($mysqli->connect_errno) {
         }
     });
 </script>
-<?php require_once __DIR__ . '/includes/footer.php' ?>
+<?php require_once __DIR__ . '../../../includes/footer.php' ?>

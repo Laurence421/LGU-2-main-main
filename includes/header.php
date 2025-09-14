@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="assets/img/Quezon_City.svg.png" rel="icon">
+  <link href="../../assets/img/Quezon_City.svg.png" rel="icon">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.2.0/css/line.css">
@@ -18,8 +18,39 @@
   <link href="<?= $root ?>assets/css/style.css" rel="stylesheet">
   <link href="<?= $root ?>assets/css/modal-fix.css" rel="stylesheet">
   <title><?= $pageTitle ?? 'Local Government Unit 2' ?></title>
-</head>
 
+<?php
+// Database credentials
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "login";
+// Create connection
+$mysqli = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($mysqli->connect_error) {
+    die("Connection failed: " . $mysqli->connect_error);
+}
+
+// SQL query to select data
+$sql = "SELECT id, username, avatar_url FROM users"; 
+$result = $mysqli->query($sql);// Replace 
+// 'users' with your table name
+$name = "";
+$imagePath = "";
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $name = $row["username"];
+    $imagePath = $row["avatar_url"]; // Assuming you store the path
+} else {
+    echo "No data found.";
+}
+
+
+?>
+</head>
 <body class="g-0">
   <!-- Header -->
    <div>
@@ -37,12 +68,12 @@
         <div class="profile dropdown">
       <button class="btn btn-light d-flex align-items-center gap-2" data-bs-toggle="dropdown" aria-expanded="false">
         <div class="avatar-32">
-          <img src="<?= $root ?>assets/img/default-avatar.jpg" alt="User">
+          <img src="<?= ($imagePath )?>" alt="User">
         </div>
         <i class="fa-solid fa-caret-down"></i>
       </button>
       <ul class=" dropdown-menu dropdown-menu-end">
-        <li class="p-1 fw-normal"><a  class=" dropdown-item profile-link nav-link" href="<?= $root ?>profile.php"><i class="fa-regular fa-user me-2"></i>Profile</a></li>
+        <li class="p-1 fw-normal"><a  class=" dropdown-item profile-link nav-link" href="<?= $root ?>contents/profile/profile.php"><i class="fa-regular fa-user me-2"></i>Profile</a></li>
         <li class="p-1 fw-normal"><a class="dropdown-item settings-link nav-link" href="<?= $root ?>settings.php"><i class="fa-solid fa-gear me-2"></i>Settings</a></li>
         <li><hr class="dropdown-divider"></li>
         <li  class="text-right"><a class="dropdown-item " href="#" data-bs-toggle="modal" data-bs-target="#logoutConfirmModal"><i class="fa-solid fa-right-from-bracket me-2"></i>Logout</a></li>
@@ -70,9 +101,9 @@
           <div class="profile-pod">
             <div class="text-center w-100">
               <div class="avatar-64 mx-auto mb-3">
-                <img src="<?= $root ?>assets/img/default-avatar.jpg" alt="User">
+                <img src="<?= ($imagePath )?>" alt="User">
               </div>
-              <div class="user-name "><h5 class="fw-bold"><?= ucfirst($_SESSION['username'] ?? 'Guest') ?></h5></div>
+              <div class="user-name "><h5 class="fw-bold"><?=($name) ?></h5></div>
             </div>
           </div><hr class="aside-hr me-4 ms-4 p-0">
         </div>
@@ -80,7 +111,7 @@
         <nav class="side-nav" id="sideNav">
           <!-- Dashboard - Single link, no collapse -->
           <div class="nav-group ">
-            <a href="<?= $root ?>dashboard.php" class="group-toggle no-caret" style="text-decoration: none;">
+            <a href="<?= $root ?>contents/dashboard/dashboard.php" class="group-toggle no-caret" style="text-decoration: none;">
               <span class="ico"><i class="fa-solid fa-gauge"></i></span>
               Dashboard
             </a>
