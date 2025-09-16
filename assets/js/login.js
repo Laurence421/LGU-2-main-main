@@ -1,18 +1,15 @@
-document.getElementById('btnLogin').addEventListener('click', function(){
-      const e = document.getElementById('email').value.trim();
-      const p = document.getElementById('password').value.trim();
-      if(!e || !p){
-        alert('Please enter email and password');
-        return;
-      }
-      // fake login
-      this.disabled = true;
-      this.textContent = 'Signing in...';
-      setTimeout(()=>{
-        alert('Welcome — login simulated');
-        this.disabled = false;
-        this.textContent = 'LOGIN';
-        document.getElementById('email').value='';
-        document.getElementById('password').value='';
-      }, 900);
-    });
+
+    function togglePasswordVisibility() {
+    const passwordInput = document.getElementById('password');
+    const icon = document.querySelector('.toggle-password i');
+
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        icon.classList.remove('uil-eye-slash');
+        icon.classList.add('uil-eye');
+    } else {
+        passwordInput.type = 'password';
+        icon.classList.remove('uil-eye');
+        icon.classList.add('uil-eye-slash');
+    }
+}

@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'] ?? '';
 
     if ($identifier === '' || $password === '') {
-        $error = 'Please enter email/username and password.';
+        $error = 'Please Enter email or username and password.';
     } else {
         $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
         if ($mysqli->connect_errno) {
@@ -69,6 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>LGU2 — Login</title>
     <link href="assets/img/Quezon_City.svg.png" rel="icon">
     <link href="assets/css/login.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.2.0/css/line.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/login.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -76,43 +77,54 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <body class="g-0">
     <div class="main-container container-fluid g-0">
-        <div class="left col-lg-6 col-md-12 row-md-2 d-flex align-items-center justify-content-center">
+        <div class="left d-lg-flex align-items-center justify-content-center col-lg-6 d-none d-lg-block ">
             <img class="text-pic" src="assets/img/QC.png" alt="">
             <h4 class="fw-bolder ms-1">LOCAL GOVERNMENT UNIT 2</h4>
         </div>    
             
         
-        <div class="right col-lg-6 col-md-12 row-md- d-flex align-items-center justify-content-center">
+        <div class="right-1">           
+            <div class="top-logo  d-lg-none d-sm-block p-5 ">
+            <img class="logo-pic" src="assets/img/qclogo.png" alt="">
+        </div>
             
-            <div class="form-box" role="form" aria-labelledby="login-title">
-                <h3 id="login-title fw-bolder">Login</h3>
-                <p class="sub">Sign in to your account</p>
+            <div class="form-box right-2 col-lg-8 col-md-8 col-8 d-flex align-items-center justify-content-center" role="form" aria-labelledby="login-title">
+                <div class="col-9">
+                    <h3 id="login-title" class="fw-bolder">Login</h3>
+                <p class="sub">Welcome back! Let's continue building a better community, together.</p>
+                </div>
 
-                <?php if ($error): ?>
-                    <div class="error" style="color:#c0392b; margin-bottom:12px;"><?=htmlspecialchars($error)?></div>
-                <?php endif; ?>
-
-                <form method="post" action="" class="d-flex align-items-center justify-content-center flex-column">
+                <form method="post" action="" class=" d-flex align-items-center justify-content-center flex-column">
                     <div class="form-field">
                         
-                        <input id="email" name="email" type="text" placeholder="Enter your email or username" autocomplete="username" value="<?=isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''?>">
+                        <input id="email"   name="email" type="text" placeholder="Enter your email or username:" autocomplete="username" value="<?=isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''?>">
                     </div>
 
                     <div class="form-field">
                         
-                        <input id="password" name="password" type="password" placeholder="Enter your password" autocomplete="current-password">
+                        <input id="password" name="password" type="password" placeholder="Enter your password:" autocomplete="current-password">
+                        <span class="toggle-password" onclick="togglePasswordVisibility()">
+                        <i class="uil uil-eye-slash"></i>
+                        </span>
                     </div>
 
                     <div class="controls">
                         <a class="forgot" href="#">Forgot Password?</a>
                     </div>
-
                     <button class="btn-login" id="btnLogin" type="submit">LOGIN</button>
+
+                    <?php if ($error): ?>
+                        <div class="error"><?=htmlspecialchars($error)?></div>
+                    <?php endif; ?>
                 </form>
             </div>
         </div>
     </div>
 </body>
+<script>
+    
+</script>
+<script src="./assets/js/login.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
 </html>

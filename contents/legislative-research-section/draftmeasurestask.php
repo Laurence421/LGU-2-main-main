@@ -914,8 +914,8 @@ if (isset($lgu2_conn) && $lgu2_conn->ping()) {
 ?>
 
 
-<div class="modal fade" id="ITViewModal" tabindex="-1" aria-labelledby="ITViewModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
+<div class="modal fade" id="ITViewModal" tabindex="+1" aria-labelledby="ITViewModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg ">
         <div class="modal-content">
             <div class="modal-header py-2">
                 <h5 class="modal-title" id="ITViewModalLabel">Measure Details</h5>
