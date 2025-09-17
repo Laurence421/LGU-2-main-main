@@ -70,7 +70,7 @@ if ($result->num_rows > 0) {
         <i class="fa-solid fa-caret-down"></i>
       </button>
       <ul class=" dropdown-menu dropdown-menu-end">
-        <li class="p-1 fw-normal"><a  class=" dropdown-item profile-link nav-link" href="<?= $root ?>contents/profile/profile.php"><i class="fa-regular fa-user me-2"></i>Profile</a></li>
+        <li class="p-1 fw-normal"><a  class=" dropdown-item profile-link nav-link" href="/lgu-2-main-main/contents/profile/profile.php"><i class="fa-regular fa-user me-2"></i>Profile</a></li>
         <li class="p-1 fw-normal"><a class="dropdown-item settings-link nav-link" href="<?= $root ?>settings.php"><i class="fa-solid fa-gear me-2"></i>Settings</a></li>
         <li><hr class="dropdown-divider"></li>
         <li  class="text-right"><a class="dropdown-item " href="#" data-bs-toggle="modal" data-bs-target="#logoutConfirmModal"><i class="fa-solid fa-right-from-bracket me-2"></i>Logout</a></li>
@@ -108,7 +108,7 @@ if ($result->num_rows > 0) {
         <nav class="side-nav" id="sideNav">
           <!-- Dashboard - Single link, no collapse -->
           <div class="nav-group ">
-            <a href="<?= $root ?>contents/dashboard/dashboard.php" class="group-toggle no-caret" style="text-decoration: none;">
+            <a href="/lgu-2-main-main/contents/dashboard/dashboard.php" class="group-toggle no-caret" style="text-decoration: none;">
               <span class="ico"><i class="fa-solid fa-gauge"></i></span>
               Dashboard
             </a>
@@ -122,9 +122,9 @@ if ($result->num_rows > 0) {
               <i class="fa-solid fa-chevron-down caret"></i>
             </button>
             <ul class="sublist">
-              <li><a href="<?= $root ?>contents/ordinance-resolution-tracking/draft-creation.php" class=" nav-link">Draft Creation &
+              <li><a href="/lgu-2-main-maincontents/ordinance-resolution-tracking/draft-creation.php" class=" nav-link">Draft Creation &
                   Editing</a></li>
-              <li><a href="<?= $root ?>contents/ordinance-resolution-tracking/sponsorship-management.php" class="nav-link">Sponsorship &
+              <li><a href="/lgu-2-main-maincontents/ordinance-resolution-tracking/sponsorship-management.php" class="nav-link">Sponsorship &
                   Author Management</a></li>
             </ul>
           </div>
@@ -137,9 +137,9 @@ if ($result->num_rows > 0) {
               <i class="fa-solid fa-chevron-down caret"></i>
             </button>
             <ul class="sublist">
-              <li><a href="<?= $root ?>contents/session-meeting-management/session-scheduling.php" class="nav-link">Session Scheduling
+              <li><a href="/lgu-2-main-maincontents/session-meeting-management/session-scheduling.php" class="nav-link">Session Scheduling
                   and Notifications</a></li>
-              <li><a href="contents/session-meeting-management/agenda-builder.php" class="nav-link">Agenda Builder</a></li>
+              <li><a href="/lgu-2-main-maincontents/session-meeting-management/agenda-builder.php" class="nav-link">Agenda Builder</a></li>
             </ul>
           </div>
 
@@ -151,7 +151,7 @@ if ($result->num_rows > 0) {
               <i class="fa-solid fa-chevron-down caret"></i>
             </button>
             <ul class="sublist">
-              <li><a href="<?= $root ?>contents/legislative-agenda-calendar/placeholder.php?t=Event%20Calendar%20(Sessions,%20Hearings,%20Consultations)"
+              <li><a href="/lgu-2-main-maincontents/legislative-agenda-calendar/placeholder.php?t=Event%20Calendar%20(Sessions,%20Hearings,%20Consultations)"
                   class="nav-link">Event Calendar (Sessions, Hearings, Consultations)</a></li>
               <li><a href="<?= $root ?>contents/legislative-agenda-calendar/placeholder.php?t=Priority%20Legislative%20List"
                   class="nav-link">Priority Legislative List</a></li>
