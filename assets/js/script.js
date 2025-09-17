@@ -93,11 +93,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Logout functionality
+    // Logout functionality
   const confirmLogoutBtn = document.getElementById('confirmLogoutBtn');
   if (confirmLogoutBtn) {
     confirmLogoutBtn.addEventListener('click', () => {
-      window.location.href = '/logout.php';
+      window.location.href = '/lgu-2-main-main/logout.php';
     });
   }
+
 });
