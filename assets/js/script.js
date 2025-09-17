@@ -5,7 +5,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Set active navigation based on current URL
   const currentPath = window.location.pathname;
-  const activeLink = document.querySelector(`.nav-link[href="${currentPath}"]`);
+  // Remove trailing slash for comparison
+  const normalizedPath = currentPath.endsWith('/') && currentPath.length > 1
+    ? currentPath.slice(0, -1)
+    : currentPath;
+
+  let activeLink;
+
+  // Manual override for 'draftmeasurestask.php' to always activate the 'Incoming Task' tab
+  if (currentPath.includes('/draftmeasurestask.php')) {
+    activeLink = document.querySelector('.nav-link[href*="?t=Incoming%20Task"]');
+  } else {
+    // Find active link by checking both exact match and normalized path
+    activeLink = document.querySelector(`.nav-link[href="${currentPath}"]`) ||
+                 document.querySelector(`.nav-link[href="${normalizedPath}"]`);
+  }
+
   if (activeLink) {
     document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
     activeLink.classList.add('active');
@@ -77,4 +92,24 @@ document.addEventListener('DOMContentLoaded', () => {
       if (isMobile()) body.classList.remove('mobile-open');
     });
   });
+
+  // Handle dropdown menus
+  const profileDropdown = document.querySelector('.header .dropdown');
+  if (profileDropdown) {
+    profileDropdown.addEventListener('click', (e) => {
+      profileDropdown.classList.toggle('open');
+      e.stopPropagation();
+    });
+    document.addEventListener('click', () => {
+      profileDropdown.classList.remove('open');
+    });
+  }
+
+  // Logout functionality
+  const confirmLogoutBtn = document.getElementById('confirmLogoutBtn');
+  if (confirmLogoutBtn) {
+    confirmLogoutBtn.addEventListener('click', () => {
+      window.location.href = '/logout.php';
+    });
+  }
 });
