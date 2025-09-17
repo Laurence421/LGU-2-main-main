@@ -70,7 +70,7 @@ if ($result->num_rows > 0) {
         <i class="fa-solid fa-caret-down"></i>
       </button>
       <ul class=" dropdown-menu dropdown-menu-end">
-        <li class="p-1 fw-normal"><a  class=" dropdown-item profile-link nav-link" href="/lgu-2-main-main/contents/profile/profile.php"><i class="fa-regular fa-user me-2"></i>Profile</a></li>
+        <li class="p-1 fw-normal"><a  class=" dropdown-item profile-link nav-link" href="<?= $root ?>contents/profile/profile.php"><i class="fa-regular fa-user me-2"></i>Profile</a></li>
         <li class="p-1 fw-normal"><a class="dropdown-item settings-link nav-link" href="<?= $root ?>settings.php"><i class="fa-solid fa-gear me-2"></i>Settings</a></li>
         <li><hr class="dropdown-divider"></li>
         <li  class="text-right"><a class="dropdown-item " href="#" data-bs-toggle="modal" data-bs-target="#logoutConfirmModal"><i class="fa-solid fa-right-from-bracket me-2"></i>Logout</a></li>
