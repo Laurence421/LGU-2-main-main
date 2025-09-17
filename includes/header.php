@@ -1,4 +1,4 @@
-<?php require_once __DIR__ . '/../auth.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/lgu-2-main-main/auth.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,12 +11,9 @@
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.2.0/css/solid.css">
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.2.0/css/thinline.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <?php 
-  // Calculate relative path to root
-  $root = str_repeat('../', substr_count(trim($_SERVER['PHP_SELF'], '/'), '/') - 1);
-  ?>
-  <link href="<?= $root ?>assets/css/style.css" rel="stylesheet">
-  <link href="<?= $root ?>assets/css/modal-fix.css" rel="stylesheet">
+
+  <link href="/lgu-2-main-main/assets/css/style.css" rel="stylesheet">
+  <link href="/lgu-2-main-main/assets/css/modal-fix.css" rel="stylesheet">
   <title><?= $pageTitle ?? 'Local Government Unit 2' ?></title>
 
 <?php
@@ -241,7 +238,7 @@ if ($result->num_rows > 0) {
               <i class="fa-solid fa-chevron-down caret"></i>
             </button>
             <ul class="sublist">
-            <li><a href="<?= $root ?>contents/legislative-research-section/draftmeasurestask.php"class="nav-link">Draft Measures Task</a></li>
+            <li><a href="/lgu-2-main-main/contents/legislative-research-section/draftmeasurestask.php"class="nav-link">Draft Measures Task</a></li>
             </ul>
           </div>
 

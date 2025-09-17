@@ -6,19 +6,17 @@ document.addEventListener('DOMContentLoaded', () => {
   // Set active navigation based on current URL
   const currentPath = window.location.pathname;
   // Remove trailing slash for comparison
-  const normalizedPath = currentPath.endsWith('/') && currentPath.length > 1
-    ? currentPath.slice(0, -1)
+  const normalizedPath = currentPath.endsWith('/') && currentPath.length > 1 
+    ? currentPath.slice(0, -1) 
     : currentPath;
 
-  let activeLink;
+  // Find active link by checking both exact match and normalized path
+  let activeLink = document.querySelector(`.nav-link[href="${currentPath}"]`) ||
+                   document.querySelector(`.nav-link[href="${normalizedPath}"]`);
 
   // Manual override for 'draftmeasurestask.php' to always activate the 'Incoming Task' tab
   if (currentPath.includes('/draftmeasurestask.php')) {
     activeLink = document.querySelector('.nav-link[href*="?t=Incoming%20Task"]');
-  } else {
-    // Find active link by checking both exact match and normalized path
-    activeLink = document.querySelector(`.nav-link[href="${currentPath}"]`) ||
-                 document.querySelector(`.nav-link[href="${normalizedPath}"]`);
   }
 
   if (activeLink) {
@@ -39,13 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
     body.classList.toggle('mobile-open');
   });
   if (backdrop) backdrop.addEventListener('click', () => body.classList.remove('mobile-open'));
-  window.addEventListener('resize', () => { 
-    if (!isMobile()) body.classList.remove('mobile-open');
-  });
 
-  // Group toggle functionality
+  // Keep sidebar state on reload
   const groups = document.querySelectorAll('.nav-group');
-  const storageKeyGroup = 'lgu_open_groups';
+  const storageKeyGroup = 'openGroups';
   const openGroups = new Set(JSON.parse(localStorage.getItem(storageKeyGroup) || '[]'));
   
   // Keep Dashboard always open & exclude it from being closed
@@ -83,13 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
         openGroups.delete(key);
       }
       localStorage.setItem(storageKeyGroup, JSON.stringify([...openGroups]));
-    });
-  });
-
-  // Close mobile menu when clicking links
-  document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      if (isMobile()) body.classList.remove('mobile-open');
     });
   });
 

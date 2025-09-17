@@ -1,7 +1,7 @@
 <?php
 // START OF THE FIXED PHP BLOCK
 session_start();
-require_once '../../auth.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/lgu-2-main-main/auth.php';
 require_once 'connection.php'; // Includes the lgu2 database connection
 
 // Define the API key
@@ -114,7 +114,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['send_task'])) {
 }
 
 $pageTitle = "Draft Measures Task";
-require_once '../../includes/header.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/lgu-2-main-main/includes/header.php';
 ?>
 
 <style>
@@ -1254,5 +1254,5 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 <?php
-require_once '../../includes/footer.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/lgu-2-main-main/includes/footer.php';
 ?>

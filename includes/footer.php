@@ -26,7 +26,7 @@
   <footer class="footer text-center fixed bottom-0 inset-x-0" >© <span id="year"></span>&nbsp;Quezon City Local Government Unit 2 — All rights reserved</footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="<?= $root ?>assets/js/script.js"></script>
+  <script src="/lgu-2-main-main/assets/js/script.js"></script>
   <script>
     document.getElementById('confirmLogoutBtn').addEventListener('click', function() {
       window.location.href = '<?= $root ?>logout.php';
