@@ -14,17 +14,68 @@ if (isset($_SESSION['flash'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $identifier = trim($_POST['email'] ?? ''); 
+    $identifier = trim($_POST['email'] ?? '');
     $password = $_POST['password'] ?? '';
 
     if ($identifier === '' || $password === '') {
-        $error = 'Please Enter email or username and password.';
+        $error = 'Please enter email/username and password.';
     } else {
         $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
         if ($mysqli->connect_errno) {
             $error = 'Database connection failed: ' . $mysqli->connect_error;
         } else {
-            $sql = 'SELECT id, username, password, email FROM users WHERE email = ? OR username = ? LIMIT 1';
+            $tableCheck = $mysqli->query("SHOW TABLES LIKE 'users'");
+            if ($tableCheck->num_rows == 0) {
+
+                $createTable = "CREATE TABLE `users` (
+                    `id` int NOT NULL AUTO_INCREMENT,
+                    `username` varchar(50) NOT NULL,
+                    `password` varchar(255) NOT NULL COMMENT 'Stores hashed passwords',
+                    `email` varchar(100) NOT NULL,
+                    `date_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                    `avatar_url` varchar(255) NOT NULL DEFAULT 'assets/img/default-avatar.jpg',
+                    `user_type` varchar(50) DEFAULT NULL COMMENT 'Defines user role and permissions',
+                    PRIMARY KEY (`id`),
+                    UNIQUE KEY `idx_username` (`username`),
+                    UNIQUE KEY `idx_email` (`email`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='Stores user authentication and profile data'";
+
+                try {
+                    if (!$mysqli->query($createTable)) {
+                        throw new Exception('Failed to create users table: ' . $mysqli->error);
+                    }
+                    $adminUsername = 'administrator';
+                    $adminPassword = password_hash('admin123', PASSWORD_DEFAULT);
+                    $adminEmail = 'admin@lgu.gov.ph';
+                    $adminType = 'admin';
+
+                    $stmt = $mysqli->prepare("INSERT INTO `users` 
+                        (`username`, `password`, `email`, `user_type`) 
+                        VALUES (?, ?, ?, ?)");
+
+                    if (!$stmt) {
+                        throw new Exception('Failed to prepare admin user creation: ' . $mysqli->error);
+                    }
+
+                    $stmt->bind_param('ssss', $adminUsername, $adminPassword, $adminEmail, $adminType);
+
+                    if (!$stmt->execute()) {
+                        throw new Exception('Failed to create default admin user: ' . $stmt->error);
+                    }
+
+                    $stmt->close();
+
+                } catch (Exception $e) {
+                    $error = $e->getMessage();
+                    $mysqli->close();
+                    return;
+                }
+            }
+            // Debug the input
+            error_log("Login attempt - Identifier: " . $identifier);
+
+            $sql = 'SELECT id, username, password, email, user_type FROM users WHERE email = ? OR username = ? LIMIT 1';
+            error_log("SQL Query: " . $sql);
             $stmt = $mysqli->prepare($sql);
             if ($stmt) {
                 $stmt->bind_param('ss', $identifier, $identifier);
@@ -40,15 +91,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     }
 
                     if ($verified) {
+                        // Debug information
+                        error_log("User data from DB: " . print_r($row, true));
+
                         $_SESSION['user_id'] = $row['id'];
                         $_SESSION['username'] = $row['username'];
-                        header('Location: /LGU-2-main-main/contents/dashboard/dashboard.php');
+                        $_SESSION['user_type'] = strtolower($row['user_type'] ?? '');
+
+                        // Debug session data
+                        error_log("Session data after setting: " . print_r($_SESSION, true));
+
+                        if ($row['user_type'] === 'records') {
+                            header("Location: contents/records-and-correspondence/document-tracking.php");
+                            exit;
+                        } else {
+                            header("Location: /lgu-2-main-main/contents/dashboard/dashboard.php");
+                        }
                         exit;
                     } else {
-                        $error = 'Invalid credentials.';
+                        $error = 'Incorrect password. Please try again.';
                     }
                 } else {
-                    $error = 'Invalid credentials.';
+                    $error = 'Email or username not found. Please check and try again.';
                 }
                 $stmt->close();
             } else {
